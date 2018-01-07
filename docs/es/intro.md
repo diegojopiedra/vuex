@@ -1,7 +1,6 @@
 # ¿Que es Vuex?
 
-Vuex es un  **patrón de gestion de estados + librería** para aplicacines Vue.js. Sirve como una tienda centralizada para todos los componentes de una aplicación, con reglas que garantizan que el estado solo se puede mutar de manera predecible. También se integra con [la extensión devtools](https://github.com/vuejs/vue-devtools) oficial de Vue para proporcionar características avanzadas como la depuración, el viaje en el tiempo, el zero-config y la exportación / importación de instantáneas (snapshot) de estado.
-
+Vuex es un  **patrón de gestion de estados + librería** para aplicaciones Vue.js. Sirve como una tienda centralizada para todos los componentes de una aplicación, con reglas que garantizan que el estado solo se puede mutar de manera predecible. También se integra con [la extensión devtools](https://github.com/vuejs/vue-devtools) oficial de Vue para proporcionar características avanzadas como la depuración de viaje en el tiempo, el zero-config y la exportación / importación de instantáneas (snapshot) de estado.
 
 ### ¿Que es un "Patrón de Gestion de Estados"?
 
@@ -30,9 +29,9 @@ new Vue({
 
 Esta es una aplicación autocontenida con las siguientes partes:
 
-- El **estado**, que es la fuente de la vedad que conduce nuesta aplicación;
+- El **estado**, que es la fuente de la verdad que conduce nuestra aplicación;
 - La **vista**, que no es más que un mapeo declarativo del **estado**;
-- Las **acciones**, las cuales son las formas en que el estado podría cambair en realación con las entradas del usuario desde la **vista**.
+- Las **acciones**, las cuales son las formas en que el estado podría cambiar en relación con las entradas del usuario desde la **vista**.
 
 Esta es una representación extremadamente simple del concepto de "one-way data flow" (flujo de datos unidireccional):
 
@@ -45,21 +44,17 @@ Sin embargo, la simplicidad se rompe rápidamente cuando tenemos **varios compon
 - Varias vistas pueden depender de la misma pieza de estado.
 - Las acciones desde diferentes vistas pueden necesitar mutar la misma pieza de estado.
 
-Para el problema uno, pasar propiedades **(props)** puede ser tedioso para componentes profundamente anidados, y simplemente no funciona para componentes hermanos. Para el problema dos, a menudo nos encontramos recurriendo a soluciones como pasar referencias directas a instanancias padre/hijo o intentando mutar y sincronizar múltiples copias del estado a través de eventos. Ambos patrones son frágiles y conducen rápidamente a un código inmanejable.
+Para el problema uno, pasar propiedades **(props)** puede ser tedioso para componentes profundamente anidados, y simplemente no funciona para componentes hermanos. Para el problema dos, a menudo nos encontramos recurriendo a soluciones como pasar referencias directas a instancias padre/hijo o intentando mutar y sincronizar múltiples copias del estado a través de eventos. Ambos patrones son frágiles y conducen rápidamente a un código inmanejable.
 
 Entonces, ¿por qué no extraemos el estado compartido de los componentes y lo administramos en un singleton global? Con esto, nuestro árbol de componentes se convierte en una gran "vista", y cualquier componente puede acceder al estado o desencadenar acciones, ¡sin importar dónde se encuentren en el árbol!
 
 Además, al definir y separar los conceptos involucrados en la administración del estado y hacer cumplir ciertas reglas, también le damos a nuestro código más estructura y capacidad de mantenimiento.
-
-This is the basic idea behind Vuex, inspired by ,  and . Unlike the other patterns, Vuex is also a library implementation tailored specifically for Vue.js to take advantage of its granular reactivity system for efficient updates.
 
 Esta es la idea básica detrás de Vuex, inspirada en [Flux](https://facebook.github.io/flux/docs/overview.html), [Redux](http://redux.js.org/) y [The Elm Architecture](https://guide.elm-lang.org/architecture/). A diferencia de los otros patrones, Vuex es también una implementación de librería diseñada específicamente para Vue.js para aprovechar su sistema de reactividad granular para actualizaciones eficientes.
 
 ![vuex](./images/vuex.png)
 
 ### ¿Cuándo debería usarlo?
-
-Although Vuex helps us deal with shared state management, it also comes with the cost of more concepts and boilerplate. It's a trade-off between short term and long term productivity.
 
 A pesar de que Vuex nos ayuda a lidiar con la gestión compartida del estado, también viene con el costo de más conceptos y repeticiones. Es un balance entre la productividad a corto y largo plazo.
 
