@@ -1,6 +1,11 @@
 # ¿Que es Vuex?
 
+<<<<<<< HEAD
 Vuex es un  **patrón de gestion de estados + librería** para aplicaciones Vue.js. Sirve como una tienda centralizada para todos los componentes de una aplicación, con reglas que garantizan que el estado solo se puede mutar de manera predecible. También se integra con [la extensión devtools](https://github.com/vuejs/vue-devtools) oficial de Vue para proporcionar características avanzadas como la depuración de viaje en el tiempo, el zero-config y la exportación / importación de instantáneas (snapshot) de estado.
+=======
+Vuex es un  **patrón de gestion de estados + librería** para aplicaciones Vue.js. Sirve como una tienda centralizada para todos los componentes de una aplicación, con reglas que garantizan que el estado solo se puede mutar de manera predecible. También se integra con [la extensión devtools](https://github.com/vuejs/vue-devtools) oficial de Vue para proporcionar características avanzadas como la depuración, el viaje en el tiempo, el zero-config y la exportación / importación de instantáneas (snapshot) de estado.
+
+>>>>>>> a4c218b9416ebc0d1726269f5e56b08187f52939
 
 ### ¿Que es un "Patrón de Gestion de Estados"?
 
