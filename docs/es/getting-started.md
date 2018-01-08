@@ -1,19 +1,19 @@
-# Getting Started
+# Primeros Pasos
 
-At the center of every Vuex application is the **store**. A "store" is basically a container that holds your application **state**. There are two things that make a Vuex store different from a plain global object:
+En el centro de cada aplicación Vuex está la  **tienda**. Una "tienda" es básicamente un contenedor que almacena los **estados** de su aplicación. Hay dos cosas que hacen que una tienda Vuex sea diferente de un simple objeto global:
 
-1. Vuex stores are reactive. When Vue components retrieve state from it, they will reactively and efficiently update if the store's state changes.
+1. Las tiendas Vuex son reactivas. Cuando los componentes de Vue obtienen el estado de la tienda, se actualizarán de manera reactiva y eficiente si cambia el estado de esta.
 
-2. You cannot directly mutate the store's state. The only way to change a store's state is by explicitly **committing mutations**. This ensures every state change leaves a track-able record, and enables tooling that helps us better understand our applications.
+2. No puedes cambiar directamente el estado de la tienda. La única forma de cambiar el estado de una tienda es mediante **llevar a cabo explícitamente las mutaciones**. Esto garantiza que cada cambio de estado deje un registro de seguimiento y habilite herramientas que nos ayuden a comprender mejor nuestras aplicaciones.
 
-### The Simplest Store
+### La tienda más simple
 
-> **NOTE:** We will be using ES2015 syntax for code examples for the rest of the docs. If you haven't picked it up, [you should](https://babeljs.io/docs/learn-es2015/)!
+> **NOTA:** Usaremos la sintaxis de ES2015 en los ejemplos de código para el resto de la documentación. Si aún no lo has visto [¡debieras!](https://babeljs.io/docs/learn-es2015/)!
 
-After [installing](installation.md) Vuex, let's create a store. It is pretty straightforward - just provide an initial state object, and some mutations:
+Después de [instalar](installation.md) Vuex, creemos una tienda. Es bastante sencillo - solo definimos un objeto de estado inicial y algunas mutaciones:
 
 ``` js
-// Make sure to call Vue.use(Vuex) first if using a module system
+// Asegúrese de llamar a Vue.use(Vuex) primero si usa un sistema de módulo
 
 const store = new Vuex.Store({
   state: {
@@ -27,7 +27,7 @@ const store = new Vuex.Store({
 })
 ```
 
-Now, you can access the state object as `store.state`, and trigger a state change with the `store.commit` method:
+Ahora puede acceder al objeto de estado como `store.state` y activar un cambio de estado con el método `store.commit`:
 
 ``` js
 store.commit('increment')
@@ -35,10 +35,10 @@ store.commit('increment')
 console.log(store.state.count) // -> 1
 ```
 
-Again, the reason we are committing a mutation instead of changing `store.state.count` directly, is because we want to explicitly track it. This simple convention makes your intention more explicit, so that you can reason about state changes in your app better when reading the code. In addition, this gives us the opportunity to implement tools that can log every mutation, take state snapshots, or even perform time travel debugging.
+De nuevo, la razón por la cual estamos llevando a cabo una mutación en lugar de cambiar `store.state.count` directamente, es porque queremos rastrearla explícitamente. Esta sencilla convención hace que su intención sea más explícita, por lo que puede razonar mejor sobre los cambios de estado en su aplicación al leer el código. Además, esto nos da la oportunidad de implementar herramientas que pueden registrar cada mutación, tomar instantáneas de estado (snapshots), o incluso realizar el debugeo de viaje en el tiempo.
 
-Using store state in a component simply involves returning the state within a computed property, because the store state is reactive. Triggering changes simply means committing mutations in component methods.
+Usar la tienda de estados en un componente simplemente implica devolver el estado dentro de una propiedad calculada **(computed property)**, porque el estado de la tienda es reactivo. Desencadenar cambios simplemente significa llevar a cabo mutaciones en los métodos de los componentes.
 
-Here's an example of the [most basic Vuex counter app](https://jsfiddle.net/n9jmu5v7/1269/).
+Aquí hay un ejemplo de la aplicación de contador [Vuex más básica](https://jsfiddle.net/n9jmu5v7/1269/).
 
-Next, we will discuss each core concept in much finer details, starting with [State](state.md).
+A continuación, discutiremos cada concepto central en detalle, empezando por el [Estado](state.md).
